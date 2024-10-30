@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Information</title>
+
+    <link rel="stylesheet" href="styles/styles2.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">YourHoliday</div>
+
+    <!-- Main -->
+    <div class="content">
+        <h1 id="holiday-name" style="color: black;">Holiday Name</h1>
+        <p id="holiday-date" style="color: black;">Date: </p>
+        <div id="images"></div>
+    </div>
+
+    <script>
+        const holidayImages = {
+            "new-year": ["images/n1.jpg", "images/n2.jpg", "images/n3.jpg", "images/n4.jpg", "images/n5.jpg"],
+            "Independence Day": ["images/i1.jpg", "images/i2.jpg", "images/i3.jpg", "images/i4.jpg", "images/i5.jpg"],
+            "Thanksgiving": ["images/thanksgiving1.jpg", "images/thanksgiving2.jpg", "images/thanksgiving3.jpg", "images/thanksgiving4.jpg", "images/thanksgiving5.jpg"],
+            "Christmas": ["images/c1.jpg", "images/c2.jpg", "images/c3.jpg", "images/c4.jpg", "images/c5.jpg"]
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const holidayName = urlParams.get("name");
+        const holidayDate = urlParams.get("date");
+
+        document.getElementById("holiday-name").textContent = holidayName || "Unknown Holiday";
+        document.getElementById("holiday-date").textContent = `Date: ${holidayDate || "Unknown Date"}`;
+
+        const imagesContainer = document.getElementById("images");
+        const images = holidayImages[holidayName] || [];
+
+        // Function to get 3 random images 
+        function getRandomImages(arr, num) {
+            const shuffled = arr.sort(() => 0.5 - Math.random()); 
+            return shuffled.slice(0, num);
+        }
+        const selectedImages = getRandomImages(images, 3);
+        selectedImages.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = `${holidayName} image`;
+            imagesContainer.appendChild(img);
+        });
+
+    </script>
+
+</body>
+
+</html>

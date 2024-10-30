@@ -1,19 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- meta tags, links to css, etc. -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Generative Design</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourHoliday</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
 
-    <!-- visible content goes here -->
-	<h1>Generative Design</h1>
-	<p>See README.md for info</p>
+  <!-- Header -->
+  <div class="header">YourHoliday</div>
 
-    <!-- load javascript after the page elements render -->
-    <script src="assets/js/main.js"></script>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="card">
+      <h3 style="color: black;">Pick a Date to Explore!</h3>
+
+      <input type="date" id="user-date" class="form-control">
+      <button id="pick-date" class="btn">Pick Date</button>
+    </div>
+
+    <div class="card">
+      <h3 style="color: black;">Or Let us Do the Work for You</h3>
+      <p style="color: black;">Use Today’s date!</p>
+      <button id="find-holiday" class="btn">Click to find out!</button>
+    </div>
+  </div>
+
+  <div class="about text-center mt-5"></div>
+    <h3 style="color: black; align-items: center; font-size: 25px;">About YourHoliday</h4>
+    <p3 style="color: black;margin: auto;font-size: 18px;">
+      Ever wonder which holiday is just around the corner? Whether you’re planning a celebration or just curious, 
+      our smart algorithm figures it out for you! Select a date, or let us use today’s, and we’ll show you the closest holiday, 
+      along with randomly chosen images that immerse you in the holiday’s atmosphere. 
+      Explore, have fun, and get into the holiday spirit!
+    </p>
+  </div>
+
+
+  <script src="main.js"></script>
 </body>
+
 </html>
